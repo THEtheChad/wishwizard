@@ -8,4 +8,4 @@ autopublish
 insecure
 accounts-base
 bootstrap-3
-router
+iron-router

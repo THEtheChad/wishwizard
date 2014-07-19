@@ -1,1 +1,0 @@
-WishLists = new Meteor.Collection("WishLists");

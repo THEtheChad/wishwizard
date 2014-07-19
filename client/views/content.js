@@ -5,7 +5,7 @@ Template.content.wishlist = function(){
 };
 
 Template.content.events({
-	'click a.remove': function(e){
+	'click a': function(e){
 		Wishlist.remove(this._id);
 	}
 });
