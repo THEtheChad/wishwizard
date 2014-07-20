@@ -5,7 +5,7 @@ var amazon = new apac.OperationHelper({
 	assocId: '349984393105'
 });
 
-var amazonUrlRegex = /dp\/([^/]+)/;
+var amazonUrlRegex = /(dp|product)\/([^/]+)/;
 
 // var amazonUrlRegex = /^http\:\/\/www\.amazon\.com\/[^\/]+\/dp\/([0-9A-Z]+)\/.*$/;
 
@@ -94,9 +94,9 @@ Meteor.methods({
 
 	addAmazonItem: function(collectionId, amazonUrl) {
 		var regexResult = amazonUrlRegex.exec(amazonUrl);
-		if (!regexResult || regexResult.length !== 2) throw new Meteor.Error(500, 'Invalid Amazon URL');
+		if (!regexResult || regexResult.length !== 3) throw new Meteor.Error(500, 'Invalid Amazon URL');
 
-		var ASIN = regexResult[1];
+		var ASIN = regexResult[2];
 		console.log('ASIN: ' + ASIN);
 
 		var fut = new Future();
