@@ -10,7 +10,5 @@ Template.products.products = function(){
 		}
 	});
 
-	console.log(items);
-
 	return items;
 };
