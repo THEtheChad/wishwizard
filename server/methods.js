@@ -1,8 +1,9 @@
 var util = Npm.require("util");
+var amazonAssocId = '349984393105';
 var amazon = new apac.OperationHelper({
 	awsId: 'AKIAJGLQRO6ZUUBDS6GA',
 	awsSecret: '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',
-	assocId: '349984393105'
+	assocId: amazonAssocId
 });
 
 var amazonUrlRegex = /(dp|product)\/([^/]+)/;
@@ -123,7 +124,7 @@ Meteor.methods({
 					var itemToInsert = {
 						_id: ASIN,
 						name: itemAttributes.Title[0],
-						url: item.DetailPageURL[0],
+						url: ' http://www.amazon.com/dp/' + ASIN + '/?tag=' + amazonAssocId,
 						price: parseInt(offer.OfferListing[0].Price[0].Amount[0]) / 100.0,
 						thumb: item.LargeImage[0].URL[0],
 						likes: [],
