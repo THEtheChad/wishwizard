@@ -1,7 +1,11 @@
 <template name="products">
-	<div class="row">
 	{{#each products}}
-		{{> product}}
+		<div class="row">
+		{{#each this}}
+			<div class="col-xs-4">
+			{{> product}}
+			</div>
+		{{/each}}
+		</div>
 	{{/each}}
-	</div>
 </template>
