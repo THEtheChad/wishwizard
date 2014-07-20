@@ -1,0 +1,1 @@
+Simplify = Npm.require('simplify-commerce');
