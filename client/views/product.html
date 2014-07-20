@@ -1,7 +1,7 @@
 <template name="product">
     <div class="productCard">
     	<div class="productCard_topHeader">
-    		<h1 class="productCard_price">{{price}}</h1>
+    		<h1 class="productCard_price">${{price}}</h1>
         <div class="cardAdds_interact">
           <span class="fa fa-heart cardAdds_like"></span>
           <span class="fa fa-plus cardAdds_collect"></span>
@@ -13,12 +13,8 @@
         <div class="productCard_title">{{name}}</div>
         <div class="cardAdds_community">
         	<div class="cardAdds_members clearfix">
-            <img src="http://api.randomuser.me/portraits/women/5.jpg" alt="" />
-            <img src="http://api.randomuser.me/portraits/women/30.jpg" alt="" />
-            <img src="http://api.randomuser.me/portraits/women/6.jpg" alt="" />
-            <img src="http://api.randomuser.me/portraits/men/6.jpg" alt="" />
-            <img src="http://api.randomuser.me/portraits/men/2.jpg" alt="" />
-            <div class="cardAdds_memberNumber">1.3k</div>
+                {{{likes}}}
+                <div class="cardAdds_memberNumber">{{likeCount}}</div>
         	</div>
         </div>
     </div>

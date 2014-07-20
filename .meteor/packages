@@ -4,7 +4,6 @@
 # but you can also edit it by hand.
 
 standard-app-packages
-autopublish
 insecure
 accounts-base
 bootstrap-3
@@ -14,4 +13,6 @@ accounts-password
 accounts-ui-bootstrap-3
 accounts-facebook
 accounts-twitter
+crypto-md5
+font-awesome
 simplify
