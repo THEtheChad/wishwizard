@@ -1,5 +1,6 @@
 <template name="donate">
-    <div class="container">
+    {{#if visible}}
+    <div id="donatePopup" class="pop messagepop">
         <div class="row">
             <form class="form-horizontal" role="form" id="donateForm">
                 <div class="form-group">
@@ -28,10 +29,11 @@
                 </div>
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-default"><i class="fa fa-money"></i> Thanks!!</button>
+                        <button type="submit" class="btn btn-default ajax-submit"><i class="fa fa-money"></i> Thanks!!</button>
                     </div>
                 </div>
             </form>
         </div>
     </div>
+    {{/if}}
 </template>
