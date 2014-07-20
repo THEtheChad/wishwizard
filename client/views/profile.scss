@@ -1,0 +1,58 @@
+// Navigation
+.nav_wrapper {
+  background: rgba(0,0,0,0.32);
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+nav { 
+  img {
+    height: 2.5em;
+    padding: 0.25em 1em;
+  }
+}
+.nav_profileLink { 
+  float:right;
+  a { line-height: 2em; }
+}
+
+//Hero
+.hero { 
+  background: url('https://s3-us-west-2.amazonaws.com/cbeas.img/wishwizard/banner_profile.png') no-repeat center top;
+  background-size: cover;
+  height: 20em;
+}
+.hero_avatar {
+  text-align: center;
+  padding-top: 5em;
+  img { max-width: 150px; }
+  span {
+    display: block;
+    color: #fff;
+    text-shadow: 0 0 2px rgba(0,0,0,0.25);
+  }
+}
+
+// Page
+section {
+  margin: 2em;
+  .title { 
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.5em;
+    color: #444;
+    margin-bottom: 0.5em;
+  }
+}
+.divider {
+  margin: 1em 0;
+  height: 5px;
+  background: url('https://s3-us-west-2.amazonaws.com/cbeas.img/wishwizard/divider.png') repeat-x;
+}
+
+// Add Item
+.amazonItem {
+  padding: 1em;
+  margin-top: 0.25em;
+  background: #fff;
+}

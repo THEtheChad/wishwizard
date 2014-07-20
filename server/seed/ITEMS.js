@@ -4,3 +4,10 @@ ITEMS = [
 	'http://www.amazon.com/Aurora-Rabbit-Flopsie-Stuffed-Animal/dp/B000VFJOL0/ref=sr_1_1?s=toys-and-games&ie=UTF8&qid=1405844506&sr=1-1&keywords=Aurora+Plush+Bitty+Rabbit+Mini+Flopsie',
 	'http://www.amazon.com/dp/B004T39IXO/ref=wl_it_dp_o_pC_nS_ttl?_encoding=UTF8&colid=GWVI1YYJWYO8&coliid=I1SV3YF9S643AB'
 ];
+
+// _id: ASIN,
+// name: itemAttributes.Title[0],
+// url: item.DetailPageURL[0],
+// price: parseInt(offer.OfferListing[0].Price[0].Amount[0]) / 100.0,
+// thumb: item.LargeImage[0].URL[0],
+// likes: []

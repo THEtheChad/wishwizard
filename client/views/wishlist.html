@@ -1,0 +1,27 @@
+<template name="wishlist">
+	<div class="panel">
+	  <div class="panel-heading">
+	    <h4 class="panel-title">
+	      <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+	        {{name}}
+	      </a>
+	    </h4>
+	  </div>
+	  <div id="collapseOne" class="panel-collapse collapse in">
+	    <div class="panel-body">
+	    	{{#each products}}
+	      <div class="product clearfix">
+	      	<div class="product-image">
+	          <img src="{{thumb}}" alt="" />
+	        </div>
+	        <div class="product-details">
+	          <h1>{{name}}</h1>
+	          <span class="product-price">{{price}}</span>
+	        </div>
+	        <span class="product-remove">x Remove</span>
+	      </div>
+	      {{/each}}
+	    </div>
+	  </div>
+	</div>
+</template>

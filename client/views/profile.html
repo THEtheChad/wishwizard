@@ -1,0 +1,36 @@
+<template name="profile">
+	<div class="hero">
+		<div class="hero_avatar">
+			<img src="https://s3-us-west-2.amazonaws.com/cbeas.img/wishwizard/avatar-lg.png" alt="" />
+	    <span>@greybread65</span>
+		</div>
+	</div>
+
+	<section class="addAmazonItem container">
+		<div class="title">Add Amazon Item</div>
+	  <div class="row">
+	   <div class="col-xs-12">
+	      <div class="input-group">
+	        <input type="text" class="form-control" placeholder="Amazon url here..">
+	        <span class="input-group-btn">
+	          <button class="btn btn-default" type="button">Search</button>
+	        </span>
+	      </div><!-- /input-group -->
+	    </div><!-- /.col-xs-12 -->
+	  </div><!-- /.row -->
+	  <div class="amazonItem">
+	  	jsdjfdhbdfshbjsdf
+	  </div>
+	</section>
+	  
+	<div class="divider"></div>
+	  
+	<section class="wishlists container">
+		<div class="title">Wishlists</div>
+	  <div class="panel-group" id="accordion">
+	  	{{#each wishlists}}
+	  		{{> wishlist}}
+	    {{/each}}
+	  </div>
+	</section>
+</template>

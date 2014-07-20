@@ -30,6 +30,9 @@ Template.product.events({
 		}
 	},
 	'click .cardAdds_collect': function(){
+		if(!Meteor.user()) alert('Thou Shall Not Pass... Lest You Identify Yourself. Please Log In.');
+
+		Session.set('activeItem', this._id);
 		Session.set('modal', 'addItem');
 	}
 });

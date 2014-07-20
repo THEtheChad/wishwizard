@@ -1,5 +1,7 @@
 <template name="products">
-	{{#each products}}
+  {{> header}}
+  <div class="container">
+	{{#each products}}	
 		<div class="row">
 		{{#each this}}
 			<div class="col-sm-4">
@@ -8,4 +10,5 @@
 		{{/each}}
 		</div>
 	{{/each}}
+	</div>
 </template>

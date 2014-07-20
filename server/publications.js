@@ -10,6 +10,10 @@ Meteor.publish('Items', function(){
 	return Items.find();
 });
 
+Meteor.publish('Wishlists', function(){
+	return Wishlists.find({userId: this.userId});
+});
+
 // Meteor.publish('Items', function () {
 //   var self = this;
 //   Items.find().forEach(function(item) {

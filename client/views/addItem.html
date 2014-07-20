@@ -6,46 +6,26 @@
           <div class="modal-body">
             <h1>Add To Collection</h1>
             <div class="collectionList">
-                <div class="collection clearfix">
-                <div class="slideBox">  
-                  <input type="checkbox" value="None" id="slideThree" name="check" checked />
-                  <label for="slideThree"></label>
-                </div>
-                <span>Board Games and Comic Books</span>
-                <div class="thumb thumb-0"></div>
-                <div class="thumb thumb-1"></div>
-                <div class="thumb thumb-2"></div>
-                <div class="thumb thumb-3"></div>
-              </div>
+              {{#each wishlists}}
               <div class="collection clearfix">
-                <div class="slideBox">  
-                  <input type="checkbox" value="None" id="slideThree" name="check" checked />
-                  <label for="slideThree"></label>
+                <div class="slideBox">
+                  <input type="checkbox" value="{{_id}}" id="{{_id}}" name="{{_id}}" {{isChecked}}/>
+                  <label for="{{_id}}"></label>
                 </div>
-                <span>Board Games and Comic Books</span>
+                <span>{{name}}</span>
                 <div class="thumb thumb-0"></div>
                 <div class="thumb thumb-1"></div>
                 <div class="thumb thumb-2"></div>
                 <div class="thumb thumb-3"></div>
               </div>
-              <div class="collection clearfix">
-                <div class="slideBox">  
-                  <input type="checkbox" value="None" id="slideThree" name="check" checked />
-                  <label for="slideThree"></label>
-                </div>
-                <span>Board Games and Comic Books</span>
-                <div class="thumb thumb-0"></div>
-                <div class="thumb thumb-1"></div>
-                <div class="thumb thumb-2"></div>
-                <div class="thumb thumb-3"></div>
-              </div>
+              {{/each}}
             </div>
             <div class="row">
               <div class="col-xs-12">
                 <div class="input-group addNewCollection-wrapper">
-                  <input type="text" class="form-control" placeholder="Add a new collection">
+                  <input id="collectionName" type="text" class="form-control" placeholder="Add a new collection">
                   <span class="input-group-btn">
-                    <button class="btn btn-default" type="button">Add</button>
+                    <button id="addCollection" class="btn btn-default" type="button">Add</button>
                   </span>
                 </div><!-- /input-group -->
               </div><!-- /.col-xs-12 -->

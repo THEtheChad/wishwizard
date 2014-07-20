@@ -1,18 +1,12 @@
 Meteor.startup(function(){
-	var users = [];
-	var items = [];
-	
-
 
 	Meteor.users.remove({});
+	Items.remove({});
+	Wishlists.remove({});
 
 	USERS.forEach(function(user){
-		var _id = Meteor.users.insert(user);
-
-		users.push(_id);
+		Meteor.users.insert(user);
 	});
-
-	Items.remove({});
 
 	ITEMS.forEach(function(url){
 		Meteor.call('addAmazonItem', null, url);
