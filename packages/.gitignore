@@ -10,7 +10,13 @@
 /iron-layout
 /iron-dynamic-template
 /accounts-ui-bootstrap-3
+<<<<<<< HEAD
 /accounts-ui-bootstrap-3
 /crypto-md5
 /font-awesome
 /crypto-base
+=======
+/crypto-base
+/crypto-md5
+/font-awesome
+>>>>>>> c421c83e65ed665bb1aa5b92e06c6656583d380b
