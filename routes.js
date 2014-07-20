@@ -1,9 +1,9 @@
 Router.configure({
-    layoutTemplate: 'layout'
+  layoutTemplate: 'layout'
 });
 
 Router.map(function() {
-  this.route('listItems', {path: '/'});
+  this.route('listItems');
   this.route('addItem');
-  this.route('products');
+  this.route('products', {path: '/'});
 });
