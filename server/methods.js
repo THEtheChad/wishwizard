@@ -5,13 +5,18 @@ var amazon = new apac.OperationHelper({
     assocId:   '349984393105'
 });
 
+var amazonUrlRegex = /^http\:\/\/www\.amazon\.com\/[^\/]+\/dp\/(\d+)\/.*$/;
+
 Meteor.methods({
   addAmazonItem: function (collectionId, amazonUrl) {
+    var regexResult = amazonUrlRegex.exec(amazonUrl);
+    if (!regexResult || regexResult.length !== 2) throw new Meteor.Error(500, 'Invalid Amazon URL');
+    console.log('ASIN: ' + regexResult[1]);
     amazon.execute('ItemLookup',
       {
         'Condition': 'All',
         'IdType': 'ASIN',
-        'ItemId': '1482217163',
+        'ItemId': regexResult[1],
         'ResponseGroup': 'Small,Offers,Images'
       },
       function(results, xml)

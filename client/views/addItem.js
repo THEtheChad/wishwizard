@@ -37,7 +37,7 @@ Template.addItem.events({
       {
         if (err)
         {
-          alert(err.details);
+          alert(err);
         }
         else
         {
