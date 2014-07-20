@@ -5,6 +5,7 @@ Template.products.products = function(){
 	var last  = ITEMS.count();
 
 	ITEMS.forEach(function(item, idx){
+		item.likecount = Math.max(item.likecount - 4, 0);
 		row.push(item);
 
 		++idx;
