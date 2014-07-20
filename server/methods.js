@@ -127,7 +127,8 @@ Meteor.methods({
 						url: ' http://www.amazon.com/dp/' + ASIN + '/?tag=' + amazonAssocId,
 						price: parseInt(offer.OfferListing[0].Price[0].Amount[0]) / 100.0,
 						thumb: item.LargeImage[0].URL[0],
-						likes: []
+						likes: [],
+						dateUpdated: new Date()
 					};
 					// console.log(util.inspect(itemToInsert, false, null, true));
 
