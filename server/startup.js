@@ -10,6 +10,8 @@ function unlikeItem(userId, itemId){
 Meteor.startup(function(){
 	var users = [];
 	var items = [];
+	
+	Future = Npm.require('fibers/future');
 
 	Meteor.users.remove({});
 
