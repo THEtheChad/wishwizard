@@ -1,9 +1,12 @@
 <template name="layout">
   {{> navbar}}
+  {{> header}}
   <div class="container">
     {{> yield}}
   </div>
 	{{> footer}}
+
+	{{! MODALS }}
   {{> donate}}
   {{> addItem}}
 </template>

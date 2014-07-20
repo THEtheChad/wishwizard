@@ -1,0 +1,61 @@
+header{
+	background-image: url('banner_main.jpg');
+	background-position: top;
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 600px;
+	position: relative;
+}
+
+.rocky-divide{
+	background-image: url('rock-repeat.png');
+	background-position: top;
+	background-repeat: repeat-x;
+	text-transform: uppercase;
+	font-size: 50px;
+	color: #333;
+	text-align: center;
+	padding: 60px 0 25px;
+	border-bottom: 2px ridge #333;
+	margin-bottom: 25px;
+	margin-top: -19px;
+	z-index: 1;
+	position: relative;
+}
+
+#left-torch,
+#right-torch{
+	position: absolute;
+	bottom: 0;
+}
+
+#left-torch{
+	width: 10%;
+	left: 8%;
+}
+#right-torch{
+	width: 10%;
+	right: 8%;
+}
+
+#header-text{
+	padding: 32px;
+	border: 1px solid #999;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -271px;
+	margin-top: -170px;
+	background: rgba(0,0,0,.35);
+}
+
+#header-learn-more{
+	text-transform: uppercase;
+	text-align: center;
+	border: 1px solid #fff;
+	width: 100%;
+	color: #fff;
+	font-size: 25px;
+	padding: 20px;
+	margin-top: 18px;
+}

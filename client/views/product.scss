@@ -34,9 +34,10 @@
       }
     }
   }
-  .productCard_img {
-    max-width: 100%;
-    width:100%;
+  .productCard_img{
+    background-size: cover;
+    background-position: center;
+    height: 300px;
   }
   .productCard_title {
     background: #699AB8;
