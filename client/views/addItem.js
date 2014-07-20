@@ -40,14 +40,16 @@ Template.addItem.events({
 		$input.val('');
 	},
 	'click .collection': function(e, tmpl){
-		var $input = tmpl.$('input');
+		var $input = $(e.currentTarget).find('input');
 		var wishlistId = $input.val();
 		var itemId = Session.get('activeItem');
 
 		if($input.is(':checked')){
+			console.log('Add item ' + itemId + ' to collection ' + wishlistId);
 			Wishlists.update({_id: wishlistId}, {$addToSet: {items: itemId}});
 		}
 		else{
+			console.log('Remove item ' + itemId + ' from collection ' + wishlistId);
 			Wishlists.update({_id: wishlistId}, {$pull: {items: itemId}});
 		}
 	}

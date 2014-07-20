@@ -18,7 +18,7 @@ Template.product.liked = function(){
 
 Template.product.events({
 	'click .cardAdds_like': function(evt, tmpl){
-		if(!Meteor.user()) return alert('Thou Shall Not Pass... Lest You Identify Yourself. Please Log In.');
+		if(!Meteor.user()) return Session.set('modal', 'noaccess');
 
 		if(this.liked){
 			console.log('unlike', this._id);
@@ -30,7 +30,7 @@ Template.product.events({
 		}
 	},
 	'click .cardAdds_collect': function(){
-		if(!Meteor.user()) return alert('Thou Shall Not Pass... Lest You Identify Yourself. Please Log In.');
+		if(!Meteor.user()) return Session.set('modal', 'noaccess');
 
 		Session.set('activeItem', this._id);
 		Session.set('modal', 'addItem');
