@@ -8,15 +8,19 @@ if (Meteor.isClient){
 
         // TODO do validation here
 
+        alert(itemName.val());
+
         var data = {
-            name: itemName.value,
-            desc: itemDesc.value,
-            url: amazonUrl.value
+            name: itemName.val(),
+            desc: itemDesc.val(),
+            url: amazonUrl.val()
         };
 
-        amazonUrl.value="";
-        itemName.value="";
-        itemDesc.value="";
+        amazonUrl.val("");
+        itemName.val("");
+        itemDesc.val("");
+
+        alert(data);
 
         Items.insert(data, function(err, _id) {
             if (err){
