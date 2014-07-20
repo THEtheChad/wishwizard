@@ -14,6 +14,9 @@ Template.navbar.events({
     Meteor.call('addAmazonItem', null, url);
 
     $input.val('');
+  },
+  'click #donate': function(){
+    Session.set('modal', 'donate');
   }
   // "click #donateToggle": function(e,tmpl) {
   // 	Session.set('donateModalVisible', true);

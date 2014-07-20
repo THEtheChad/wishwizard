@@ -1,21 +1,38 @@
-Template.donate.events({'submit' : function(event, template) {
+Template.donate.events({
+	'submit' : function(event, template) {
     submitDonate();
     event.preventDefault(); //prevent page refresh
-}});
-
-Template.donate.visible = function () {
-	return Session.get('donateModalVisible');
-}
+	}
+});
 
 function submitDonate() {
-    form={};
- 
-    $.each($('#donateForm').serializeArray(), function() {
-        form[this.name] = this.value;
-    });
- 
-    //do validation on form={firstname:'first name', lastname: 'last name', email: 'email@email.com'}
- 
-    Meteor.call('donate', form);
- 	Session.set('donateModalVisible', false);
+	form = {};
+
+	$.each($('#donateForm').serializeArray(), function() {
+		form[this.name] = this.value;
+	});
+
+	//do validation on form={firstname:'first name', lastname: 'last name', email: 'email@email.com'}
+
+	Meteor.call('donate', form);
 }
+
+Template.donate.rendered = function(){
+	var $donate = this.$('#donate-modal');
+
+	$donate.on('hidden.bs.modal', function (e) {
+		if(Session.equals('modal', 'donate')){
+		  Session.set('modal', false);
+		}
+	});
+
+	Deps.autorun(function () {
+		if(Session.equals('modal', 'donate')){
+			console.log('show donate', $donate.length);
+			$donate.modal('show');
+		}
+		else{
+			$donate.modal('hide');	
+		}
+	});
+};

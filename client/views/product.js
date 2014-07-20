@@ -30,6 +30,6 @@ Template.product.events({
 		}
 	},
 	'click .cardAdds_collect': function(){
-		$('#modal_addToCollection').modal({keyboard:true, show:true});
+		Session.set('modal', 'addItem');
 	}
 });
