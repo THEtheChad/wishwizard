@@ -2,7 +2,7 @@ Meteor.startup(function(){
 	var users = [];
 	var items = [];
 	
-	Future = Npm.require('fibers/future');
+
 
 	Meteor.users.remove({});
 
@@ -14,9 +14,7 @@ Meteor.startup(function(){
 
 	Items.remove({});
 
-	ITEMS.forEach(function(item){
-		item.likes = users;
-
-		var _id = Items.insert(item);
+	ITEMS.forEach(function(url){
+		Meteor.call('addAmazonItem', null, url);
 	});
 });

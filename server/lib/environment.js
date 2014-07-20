@@ -5,3 +5,5 @@ Accounts.onCreateUser(function(options, user){
 
     return user;
 });
+
+Future = Npm.require('fibers/future');

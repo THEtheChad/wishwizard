@@ -1,14 +1,21 @@
 Template.products.products = function(){
 	var items = [], row = [];
 
-	Items.find().forEach(function(item, idx){
+	var ITEMS = Items.find();
+	var last  = ITEMS.count();
+
+	ITEMS.forEach(function(item, idx){
 		row.push(item);
 
-		if( !(++idx % 3) ){
+		++idx;
+
+		if( !(idx % 3) && (idx != last) ){
 			items.push(row);
 			row = [];
 		}
 	});
+
+	items.push(row);
 
 	return items;
 };

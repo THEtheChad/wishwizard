@@ -5,7 +5,9 @@ var amazon = new apac.OperationHelper({
 	assocId: '349984393105'
 });
 
-var amazonUrlRegex = /^http\:\/\/www\.amazon\.com\/[^\/]+\/dp\/([0-9A-Z]+)\/.*$/;
+var amazonUrlRegex = /dp\/([^/]+)/;
+
+// var amazonUrlRegex = /^http\:\/\/www\.amazon\.com\/[^\/]+\/dp\/([0-9A-Z]+)\/.*$/;
 
 Meteor.methods({
 	likeItem: function(itemId) {
@@ -93,12 +95,15 @@ Meteor.methods({
 	addAmazonItem: function(collectionId, amazonUrl) {
 		var regexResult = amazonUrlRegex.exec(amazonUrl);
 		if (!regexResult || regexResult.length !== 2) throw new Meteor.Error(500, 'Invalid Amazon URL');
-		console.log('ASIN: ' + regexResult[1]);
+
+		var ASIN = regexResult[1];
+		console.log('ASIN: ' + ASIN);
+
 		var fut = new Future();
 		amazon.execute('ItemLookup', {
 				'Condition': 'New',
 				'IdType': 'ASIN',
-				'ItemId': regexResult[1],
+				'ItemId': ASIN,
 				//'MerchantId': 'Amazon', //Use this to limit only to items sold directly by Amazon (not just fulfilled by them)
 				'ResponseGroup': 'Small,OfferFull,Images'
 			},
@@ -107,7 +112,7 @@ Meteor.methods({
 				var itemAttributes = item.ItemAttributes[0];
 				var offers = item.Offers[0].Offer;
 				var offer = null;
-				console.log(util.inspect(item, false, null, true));
+				// console.log(util.inspect(item, false, null, true));
 				for (var i = 0; i < offers.length; ++i) {
 					if (offers[i].OfferAttributes[0].Condition[0] === 'New') {
 						offer = offers[i];
@@ -116,14 +121,17 @@ Meteor.methods({
 				}
 				if (offer !== null) {
 					var itemToInsert = {
+						_id: ASIN,
 						name: itemAttributes.Title[0],
 						url: item.DetailPageURL[0],
 						price: parseInt(offer.OfferListing[0].Price[0].Amount[0]) / 100.0,
 						thumb: item.LargeImage[0].URL[0],
 						likes: []
 					};
-					console.log(util.inspect(itemToInsert, false, null, true));
-					itemId = Items.insert(itemToInsert);
+					// console.log(util.inspect(itemToInsert, false, null, true));
+
+					itemId = Items.upsert({_id: ASIN}, itemToInsert);
+
 					fut['return']({
 						itemId: itemId
 					});
