@@ -1,3 +1,14 @@
 Template.products.products = function(){
-	return Items.find();
+	var items = [], row = [];
+
+	Items.find().forEach(function(obj, idx){
+		row.push(obj);
+
+		if( !(++idx % 3) ){
+			items.push(row);
+			row = [];
+		}
+	});
+
+	return items;
 };
