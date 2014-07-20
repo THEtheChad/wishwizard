@@ -6,4 +6,6 @@
 /iron-router
 /sass
 /blaze-layout
-/accounts-ui-bootstrap-3
+/iron-core
+/iron-layout
+/iron-dynamic-template
