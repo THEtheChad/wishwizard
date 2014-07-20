@@ -15,6 +15,8 @@ function submitDonate() {
 	//do validation on form={firstname:'first name', lastname: 'last name', email: 'email@email.com'}
 
 	Meteor.call('donate', form);
+
+	$('#donate-modal').modal('hide')
 }
 
 Template.donate.rendered = function(){
