@@ -6,4 +6,5 @@ Router.map(function() {
   this.route('listItems');
   this.route('addItem');
   this.route('products', {path: '/'});
+  this.route('donate');
 });
