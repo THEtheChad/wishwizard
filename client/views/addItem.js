@@ -8,8 +8,6 @@ Template.addItem.events({
 
   	// TODO do validation here
 
-  	alert(itemName.val());
-
   	var data = {
   		name: itemName.val(),
   		desc: itemDesc.val(),
