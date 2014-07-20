@@ -15,12 +15,16 @@ header{
 	font-size: 50px;
 	color: #333;
 	text-align: center;
-	padding: 60px 0 25px;
-	border-bottom: 2px ridge #333;
-	margin-bottom: 25px;
+	padding: 60px 0 0;
 	margin-top: -19px;
 	z-index: 1;
 	position: relative;
+}
+
+.divider {
+  margin: 1em 0;
+  height: 5px;
+  background: url('https://s3-us-west-2.amazonaws.com/cbeas.img/wishwizard/divider.png') repeat-x;
 }
 
 #left-torch,
