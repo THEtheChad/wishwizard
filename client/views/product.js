@@ -12,9 +12,19 @@ Template.product.price = function(){
 	return this.price.toFixed(2);
 };
 
+Template.product.liked = function(){
+	return this.liked ? 'active' : '';
+};
+
 Template.product.events({
-	'click .cardAdds_like': function(){
-		Meteor.call('likeItem', this._id);
-		console.log('liked');
+	'click .cardAdds_like': function(evt, tmpl){
+		if(this.liked){
+			console.log('unlike', this._id);
+			Meteor.call('unlikeItem', this._id);
+		}
+		else{
+			console.log('like', this._id);
+			Meteor.call('likeItem', this._id);
+		}
 	}
 });

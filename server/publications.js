@@ -9,3 +9,17 @@ Meteor.publish('allUserData', function(){
 Meteor.publish('Items', function(){
 	return Items.find();
 });
+
+// Meteor.publish('Items', function () {
+//   var self = this;
+//   Items.find().forEach(function(item) {
+//   	if(item.likes.indexOf(self.id) + 1){
+//   		item.liked = true;
+//   	}
+//   	else{
+//   		item.liked = false;
+//   	}
+//     self.added('Items', item._id, item);
+//   });
+//   self.ready();
+// });
