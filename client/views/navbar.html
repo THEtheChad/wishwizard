@@ -12,9 +12,9 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="{{pathFor 'products'}}">Products</a></li>
-                    <li><a href="{{pathFor 'listItems'}}">Items</a></li>
-                    <li><a href="{{pathFor 'addItem'}}">Add Item</a></li>
+                    <li class="default-active navbar-item active"><a href="{{pathFor 'products'}}">Products</a></li>
+                    <li class="navbar-item"><a href="{{pathFor 'listItems'}}">Items</a></li>
+                    <li class="navbar-item"><a href="{{pathFor 'addItem'}}">Add Item</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     {{> loginButtons}} <!-- here -->
