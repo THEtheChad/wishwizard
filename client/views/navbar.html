@@ -8,26 +8,23 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{pathFor 'products'}}">Wish Wizard</a>
+                <a class="navbar-brand" href="{{pathFor 'products'}}">{{#if currentUser}}<img src="nav_logo.png">{{/if}}</a>
             </div>
             <div class="navbar-collapse collapse">
-                <!--
-                <ul class="nav navbar-nav">
-                    <li class="default-active navbar-item active"><a href="{{pathFor 'products'}}">Products</a></li>
-                    <li class="navbar-item"><a href="{{pathFor 'listItems'}}">Items</a></li>
-                    <li class="navbar-item"><a href="{{pathFor 'addItem'}}">Add Item</a></li>
-                </ul>
-                -->
+                {{#if currentUser}}
                 <button id="donate" type="button" class="btn btn-primary navbar-btn">Donate</button>
+                {{/if}}
                 <ul class="nav navbar-nav navbar-right">
                     {{> loginButtons}} <!-- here -->
                 </ul>
+                {{#if currentUser}}
                 <div id="amazon-url" class="navbar-form navbar-right">
                   <div class="form-group">
                     <input type="text" class="form-control" placeholder="Amazon Url">
                   </div>
                   <button class="btn btn-default">+</button>
                 </div>
+                {{/if}}
             </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
     </div><!--/.navbar -->
