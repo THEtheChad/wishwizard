@@ -1,0 +1,115 @@
+
+#modal_addToCollection {
+  h1 { 
+    font-size: 2em;
+    text-align: center;
+    line-height: 2em;
+    margin: 0;
+    color: #999;
+  }
+  .modal-content {
+    border-radius: 0;
+    padding: 0;
+  }
+  .modal-header {
+    background: url('http://31.media.tumblr.com/tumblr_lnd7f2s2K11ql201ao1_500.gif') center no-repeat;
+    background-size: cover;
+    height: 12em;
+  }
+  .modal-body { padding: 0; }
+  .collectionList {
+    padding: 0.25em;
+    max-height: 14em;
+    overflow: scroll;
+  }
+  .collection {
+    margin: 0.5em 0 1em ;
+    background: #eee; 
+    cursor: pointer;
+    transition: all 0.4s ease;
+    &:hover { background: #bbb; }
+    &:first-child { margin-top: 0; }
+    .slideBox {
+      float: left;
+      width: 80px;
+      height: 26px;
+      background: #666;
+      margin: 0.5em;
+      position: relative;
+      border-radius: 50px;
+      &:after {
+        content: 'No';
+        color: #999;
+        position: absolute;
+        right: 10px;
+        z-index: 0;
+        font: 14px/26px Arial, sans-serif;
+        font-weight: bold;
+      }
+      &:before {
+        content: 'Yes';
+        color: lighten(#65AFDA, 20%);
+        position: absolute;
+        left: 10px;
+        z-index: 0;
+        font: 14px/26px Arial, sans-serif;
+        font-weight: bold;
+      }
+      label {
+        display: block;
+        width: 34px;
+        height: 20px;
+        cursor: pointer;
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        z-index: 1;
+        background: #999;
+        background: linear-gradient(to bottom, #FFF 0%, #eee 40%, #fff 100%);
+        border-radius: 50px;
+        transition: all .4s ease;
+      }
+      input[type=checkbox] {
+        visibility: hidden;
+        &:checked + label {
+          left: 43px;
+        }
+      }
+    }
+    .thumb {
+      float: right;
+      background-size: 80%;
+      background-repeat: no-repeat;
+      background-color: #fff;
+      background-position: center;
+      margin: 0.5em 0.25em;
+      width: 2em;
+      height: 2em;
+      border: 1px solid #ccc;
+    }
+  	.thumb-0 { background-image: url('http://ecx.images-amazon.com/images/I/81ssPUIfoJL._SX522_.jpg');}
+    .thumb-1 { background-image: url('http://ecx.images-amazon.com/images/I/519CVRT008L._SL500_SL135_.jpg'); }
+    .thumb-2 { background-image: url('http://ecx.images-amazon.com/images/I/51EEvKJJxTL._SL500_SL135_.jpg'); }
+    .thumb-3 { background-image: url('http://ecx.images-amazon.com/images/I/51dATXSaGbL._SL500_SL135_.jpg'); }
+    span { 
+      float: left;
+      line-height: 3em;
+      font-weight: bold;
+    }
+  }
+  input, .btn { border-radius: 0; }
+  .addNewCollection-wrapper {
+    background: #699AB8;
+    padding: 1em;
+    margin-top: 0.5em;
+  }
+}
+
+@media (max-width: 600px) {
+  #modal_addToCollection {
+    min-width: 400px;
+  }
+  .collection .thumb {
+    display: none;
+  }
+}

@@ -28,5 +28,8 @@ Template.product.events({
 			console.log('like', this._id);
 			Meteor.call('likeItem', this._id);
 		}
+	},
+	'click .cardAdds_collect': function(){
+		$('#modal_addToCollection').modal({keyboard:true, show:true});
 	}
 });
