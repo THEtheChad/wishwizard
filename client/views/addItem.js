@@ -2,9 +2,9 @@ Template.addItem.events({
   'submit form' : function(event, template) {
   	event.preventDefault();
 
-    itemName = template.find('#itemName');
-    itemDesc = template.find('#itemDesc');
-    amazonUrl = template.find('#amazonUrl');
+    itemName = template.$('#itemName');
+    itemDesc = template.$('#itemDesc');
+    amazonUrl = template.$('#amazonUrl');
 
   	// TODO do validation here
 
