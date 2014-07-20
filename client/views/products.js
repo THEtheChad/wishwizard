@@ -1,7 +1,7 @@
 Template.products.products = function(){
 	var items = [], row = [];
 
-	var ITEMS = Items.find();
+	var ITEMS = Items.find({},{sort: {dateUpdated: -1}});
 	var last  = ITEMS.count();
 
 	ITEMS.forEach(function(item, idx){
@@ -15,7 +15,7 @@ Template.products.products = function(){
 			row = [];
 		}
 	});
-
+ 
 	items.push(row);
 
 	return items;
