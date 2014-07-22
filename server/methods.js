@@ -1,10 +1,4 @@
 var util = Npm.require("util");
-var amazonAssocId = '349984393105';
-var amazon = new apac.OperationHelper({
-	awsId: 'AKIAJGLQRO6ZUUBDS6GA',
-	awsSecret: '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',
-	assocId: amazonAssocId
-});
 
 var amazonUrlRegex = /(dp|product)\/([^/]+)/;
 
@@ -99,6 +93,14 @@ Meteor.methods({
 
 		var ASIN = regexResult[2];
 		console.log('ASIN: ' + ASIN);
+		
+		if (typeof(amazonAwsId) === 'undefined' || typeof(amazonAwsSecret) === 'undefined' || typeof(amazonAssocId) === 'undefined') throw new Meteor.Error(500, 'Item could not be added; Amazon affiliate information is not available.');
+
+		var amazon = new apac.OperationHelper({
+			awsId: amazonAwsId,
+			awsSecret: amazonAwsSecret,
+			assocId: amazonAssocId
+		});
 
 		var fut = new Future();
 		amazon.execute('ItemLookup', {
