@@ -45,12 +45,15 @@ header{
 #header-text{
 	padding: 32px;
 	border: 1px solid #999;
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	margin-left: -271px;
-	margin-top: -170px;
+	margin: auto;
+	position: relative;
+	top: 20%;
 	background: rgba(0,0,0,.35);
+	width: 542px;
+	max-width: 80%;
+	img{
+		max-width: 100%;
+	}
 }
 
 #header-learn-more{
